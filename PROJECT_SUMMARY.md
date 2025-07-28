@@ -248,7 +248,7 @@ docker-compose up -d
 ### 联系方式
 - **项目仓库**: GitHub Repository
 - **技术博客**: 技术分享和最佳实践
-- **邮件支持**: technical-support@example.com
+- **邮件支持**: randombrain489@gmail.com
 - **社区论坛**: 用户交流和经验分享
 
 ---
