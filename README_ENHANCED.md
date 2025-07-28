@@ -477,7 +477,7 @@ streamlit run app_enhanced.py --server.port 8502
 - **GitHub Issues**: Report bugs and request features
 - **Discussions**: Community support and questions
 - **Documentation**: Comprehensive guides and tutorials
-- **Email Support**: enterprise@yourcompany.com (for enterprise customers)
+- **Email Support**: randombrain489@gmail.com
 
 ### Community Resources
 - **Discord**: Real-time community chat
