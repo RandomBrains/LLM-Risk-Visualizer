@@ -356,7 +356,7 @@ Any other context about the feature.
 - **Documentation**: Check the `docs/` directory
 - **Issues**: Open an issue on GitHub
 - **Discussions**: Use GitHub Discussions for questions
-- **Email**: dremmlerwolfgang559@gmail.com
+- **Email**: randombrain489@gmail.com
 
 ## 🎉 Recognition
 
