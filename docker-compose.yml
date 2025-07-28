@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  llm-risk-visualizer:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./data:/app/data  # 可选：用于持久化数据
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # 可选：添加Redis用于缓存
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+  # 可选：添加PostgreSQL用于数据持久化
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=llm_risk_db
+      - POSTGRES_USER=llm_user
+      - POSTGRES_PASSWORD=secure_password_123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+  postgres_data:
+
+networks:
+  default:
+    name: llm-risk-network
